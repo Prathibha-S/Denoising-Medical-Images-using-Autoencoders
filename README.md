@@ -2,8 +2,7 @@
 Denoising Medical Images using Autoencoders focuses on the use of deep learning algorithms, specifically autoencoders, for removing noise from medical images. Medical images, such as X-rays are often contaminated with noise that can negatively impact the diagnostic accuracy of medical professionals. The results of the study demonstrate that the use of autoencoders can significantly reduce noise in medical images, resulting in improved diagnostic accuracy.
 # Problem-Statement
 To build an image denoising system using denoising autoencoders where the task is to remove noise from a set of noisy medical images and generate clean versions of these medical images.
-# System-Architecture
-![image](https://github.com/Prathibha-S/Denoising-Medical-Images-using-Autoencoders/assets/95700454/23a12287-a101-41b2-b6f1-2d48c569c998)
+
 
 # Methodology
 Data augmentation is performed on the dataset to increase the size of the dataset to 10,000 images by importing ImageDataGenerator. 
