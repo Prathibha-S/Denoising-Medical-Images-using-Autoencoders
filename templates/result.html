@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        div.container{
+        height: 500px;
+        width: 60%;
+        margin:50px auto 0 auto;
+        background: linear-gradient(360deg,rgb(245, 247, 246,0.4),rgb(245, 247, 246,0.4));
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      }
+        div.column {
+        display:inline-block;
+        padding: 5px;
+        }
+        .row::after{
+        text-align: center;
+        }
+        #title {
+            text-align: center;
+            margin-top: 50px;
+            color: rgba(243, 238, 238, 0.934);
+            font-weight: bold;
+            font-size: 2.5rem;
+            text-shadow: 1px 1px 1px #000, 
+               3px 3px 5px rgb(10, 13, 16); 
+        }
+        </style>
+    <meta charset="UTF-8">
+    <title>Image Denoising Result</title>
+</head>
+<body background="/static/fixed.jpg">
+    <center>
+        <h1 id="title">Image Denoising Result</h1>
+        <div class="container">
+            <br><br>
+            <h2 style="color: white">The uploaded image has been denoised:</h2>
+        <div class="row">
+            <div class="column">
+                <img src="{{ url_for('static', filename='uploads/'+filename) }}" width="250" height="250" alt="Original Image">
+                <h2 style="color: white">Original Image</h2>
+            </div>
+            <div class="column">
+                <img src="{{ url_for('static', filename='uploads/denoised_'+filename) }}" width="250" height="250" alt="Denoised Image">
+                <h2 style="color: white">Denoised Image</h2>
+            </div>
+          </div>
+        <h3 style="color: white"><a href="{{ url_for('home') }}">Upload another image</a></h3>
+    </center>
+    </body><div>
+</body>
+</html>

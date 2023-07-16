@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Denoising medical images</title>
+    <style>
+        
+        body{
+            background: url("https://512pixels.net/wp-content/uploads/2023/01/10-4-6k-scaled.jpg");
+            no-repeat center center fixed;
+             -webkit-background-size: cover;
+             -moz-background-size: cover;
+            -o-background-size: cover;
+         background-size: cover;
+        }
+        #title {
+            text-align: center;
+            margin-top: 50px;
+            color: rgba(243, 238, 238, 0.934);
+            font-weight: bold;
+            font-size: 2.5rem;
+            text-shadow: 1px 1px 1px #000, 
+               3px 3px 5px rgb(10, 13, 16); 
+        }
+        
+        h1{
+            color:rgb(8, 8, 112);
+        }
+        input[type="file"]{
+            background-color: rgb(126, 178, 246);
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+            width: 250px;
+            margin-bottom: 20px;
+        }
+        input[type="file"]:focus{
+            outline: none;
+        }
+        .btn{
+            padding:10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            background:transparent;
+            color:white;
+            font-weight: 600;
+            transition: all .3s ease-out;
+            border: 2px solid white;
+            font-size: 15px;
+        }
+        .btn:hover{
+            background-color: rgb(8, 8, 112);
+            color: rgb(249, 239, 239);
+        }
+        .no-file-chosen {
+            color: white;
+            font-size: 12px;
+            margin-top: -10px;
+        }
+    </style>
+</head>
+<body background="wallp.jpg">
+    <center>
+    <h1 id = "title"><p>Denoising Medical Images</p></h1>
+    <form action="/result" method="POST" enctype="multipart/form-data">
+        <input type="file" name="imagefile" id="imagefile">
+        <br>
+        <br>
+        <input class="btn" type="submit" value="Denoise Image">
+    </form>
+    </center>
+    <script>
+        const fileInput = document.getElementById('imagefile');
+        const noFileChosen = document.querySelector('.no-file-chosen');
+        fileInput.addEventListener('change', () => {
+            noFileChosen.textContent = fileInput.files[0].name;
+        });
+    </script>
+</body>
+</html>
